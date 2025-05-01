@@ -37,5 +37,5 @@ jobs:
         run: |
           mvn -f Exercice-DDD/scouting-service/pom.xml sonar:sonar \
             -Dsonar.projectKey=Exercice-DDD \
-            -Dsonar.host.url=https://your-sonarqube-url \
+            -Dsonar.host.url=http://localhost:9000 \
             -Dsonar.login=$SONAR_TOKEN
