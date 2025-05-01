@@ -14,9 +14,14 @@ jobs:
     steps:
       - name: Checkout source
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Afficher la structure du dépôt
+      - name: Vérifier le contenu du répertoire après checkout
         run: ls -R
+
+      - name: Vérifier le répertoire actuel
+        run: pwd
 
       - name: Set up JDK 21
         uses: actions/setup-java@v3
