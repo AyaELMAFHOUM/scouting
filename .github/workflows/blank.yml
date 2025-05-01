@@ -15,6 +15,9 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v3
 
+      - name: Afficher la structure du dépôt
+        run: ls -R
+
       - name: Set up JDK 21
         uses: actions/setup-java@v3
         with:
@@ -37,6 +40,5 @@ jobs:
         run: |
           mvn -f scouting-service/pom.xml sonar:sonar \
             -Dsonar.projectKey=Exercice-DDD \
-            -Dsonar.host.url=http://localhost:9000 \
+            -Dsonar.host.url=https://cf65-105-66-7-93.ngrok-free.app \
             -Dsonar.login=$SONAR_TOKEN
-
