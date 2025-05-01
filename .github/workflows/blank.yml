@@ -28,9 +28,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.m2
-          key: Linux-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: Linux-maven
-          
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven
+
       - name: Build with Maven
         run: mvn -f scouting-service/pom.xml clean verify
 
@@ -40,5 +40,5 @@ jobs:
         run: |
           mvn -f scouting-service/pom.xml sonar:sonar \
             -Dsonar.projectKey=Exercice-DDD \
-            -Dsonar.host.url=https://cf65-105-66-7-93.ngrok-free.app \
+            -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=$SONAR_TOKEN
