@@ -59,7 +59,7 @@ jobs:
 
       - name: SonarQube Analysis
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.TOKEN_GITHUB }}
         run: |
           cd Exercice-DDD/scouting-service
           mvn sonar:sonar \
