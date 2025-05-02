@@ -8,7 +8,7 @@ on:
 
 jobs:
   test_scouting:
-    name: Test Scouting & SonarCloud analysis
+    name: Test Scouting & SonarQube analysis
     runs-on: ubuntu-latest
 
     services:
