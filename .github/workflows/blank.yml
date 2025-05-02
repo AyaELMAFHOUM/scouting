@@ -1,4 +1,4 @@
-name: Java CI with Maven and SonarCloud
+name: Java CI
 
 on:
   push:
@@ -56,3 +56,13 @@ jobs:
         run: |
           cd Exercice-DDD/scouting-service
           mvn clean verify
+
+      - name: SonarQube Analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          cd Exercice-DDD/scouting-service
+          mvn sonar:sonar \
+            -Dsonar.projectKey=scouting-service \
+            -Dsonar.host.url=https://cf65-105-66-7-93.ngrok-free.app \
+            -Dsonar.login=$SONAR_TOKEN
