@@ -52,7 +52,7 @@ jobs:
 
       - name: Build with Maven
         run: |
-          cd Exercice-DDD/scouting-service
+          cd pipeline-exercice-ddd/scouting-service
           mvn clean verify
       - name: SonarQube Analysis
         env:
