@@ -8,7 +8,7 @@ on:
 
 jobs:
   test_scouting:
-    name: Test Scouting & Docker Compose build
+    name: Tests Scouting & Docker Compose build
     runs-on: ubuntu-latest
 
     services:
