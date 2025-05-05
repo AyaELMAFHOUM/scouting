@@ -64,5 +64,5 @@ jobs:
           cd Exercice-DDD/scouting-service
           mvn sonar:sonar \
             -Dsonar.projectKey=scouting-service \
-            -Dsonar.host.url=https://cf65-105-66-7-93.ngrok-free.app \
+            -Dsonar.host.url= https://c1b0-197-230-25-154.ngrok-free.app \
             -Dsonar.login=$SONAR_TOKEN
