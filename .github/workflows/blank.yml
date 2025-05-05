@@ -69,4 +69,4 @@ jobs:
       - name: Shutdown Docker Compose services
         run: |
           cd Exercice-DDD/scouting-service
-          docker-compose -f docker-compose.yml down
+          docker-compose -f docker-compose.yaml down
