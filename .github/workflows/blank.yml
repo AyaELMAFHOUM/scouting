@@ -47,8 +47,9 @@ jobs:
       - name: Clone Exercice-DDD repository
         run: |
           git clone https://github.com/AyaELMAFHOUM/pipeline-exercice-ddd.git
-          ls -al Exercice-DDD
-          ls -R Exercice-DDD
+          ls -al pipeline-exercice-ddd
+          ls -R pipeline-exercice-ddd
+
       - name: Build with Maven
         run: |
           cd Exercice-DDD/scouting-service
