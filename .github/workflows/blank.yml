@@ -46,7 +46,7 @@ jobs:
             ${{ runner.os }}-maven
       - name: Clone Exercice-DDD repository
         run: |
-          git clone https://github.com/imadovetch/Exercice-DDD.git
+          git clone https://github.com/AyaELMAFHOUM/pipeline-exercice-ddd.git
           ls -al Exercice-DDD
           ls -R Exercice-DDD
       - name: Build with Maven
