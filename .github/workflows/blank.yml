@@ -50,7 +50,7 @@ jobs:
       - name: Build and start services with Docker Compose
         run: |
           cd Exercice-DDD/scouting-service
-          docker-compose -f docker-compose.yml up --build -d
+          docker-compose -f docker-compose.yaml up --build -d
 
       - name: Wait for services to be ready
         run: |
