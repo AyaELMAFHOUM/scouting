@@ -25,9 +25,8 @@ jobs:
           --health-interval=10s
           --health-timeout=5s
           --health-retries=5
-
     steps:
-      - name: Checkout source code
+      - name: Checkout source
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -45,24 +44,21 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven
-
       - name: Clone Exercice-DDD repository
         run: |
           git clone https://github.com/imadovetch/Exercice-DDD.git
           ls -al Exercice-DDD
           ls -R Exercice-DDD
-
       - name: Build with Maven
         run: |
           cd Exercice-DDD/scouting-service
           mvn clean verify
-
       - name: SonarQube Analysis
         env:
-          SONAR_TOKEN: ${{ secrets.TOKEN_GITHUB }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           cd Exercice-DDD/scouting-service
           mvn sonar:sonar \
             -Dsonar.projectKey=scouting-service \
-            -Dsonar.host.url= https://c1b0-197-230-25-154.ngrok-free.app \
+            -Dsonar.host.url=https://c1b0-197-230-25-154.ngrok-free.app  \
             -Dsonar.login=$SONAR_TOKEN
